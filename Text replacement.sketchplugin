@@ -1,0 +1,12 @@
+var repArray = {
+"something to replace":"new text",
+}
+
+for (var i=0; i<selection.count(); i++) {
+  var layer = selection[i],
+      layerString = [layer stringValue];
+  for (var val in repArray) {
+    layerString = layerString.replace(new RegExp(val, "gi"), repArray[val]);
+  }
+  [layer setStringValue: layerString];
+}
